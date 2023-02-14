@@ -4,6 +4,7 @@ import {styles} from './styles';
 import {AuthHeader} from '../../../components/AuthHeader';
 import {Input} from '../../../components/Input';
 import {Checkbox} from '../../../components/Checkbox';
+import {Button} from '../../../components/Button';
 
 export const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -21,6 +22,7 @@ export const Signup = () => {
           <Text style={styles.agreeTextBold}>Privacy policy</Text>
         </Text>
       </View>
+      <Button style={styles.button} title="Sign Up" />
     </View>
   );
 };
