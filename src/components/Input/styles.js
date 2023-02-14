@@ -3,16 +3,21 @@ import {colors} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.blue,
-    paddingVertical: 20,
+    marginBottom: 20,
     paddingHorizontal: 8,
-    borderRadius: 8,
-    width: '100%',
   },
-  title: {
-    fontSize: 16,
-    color: colors.white,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  label: {
+    color: colors.blue,
+    marginVertical: 8,
+    fontWeight: '500',
+  },
+  inputContainer: {
+    borderWidth: 1,
+    borderRadius: 14,
+    borderColor: colors.grey,
+  },
+  input: {
+    paddingHorizontal: 16,
+    paddingVertical: 20,
   },
 });
