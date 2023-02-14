@@ -15,9 +15,17 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 14,
     borderColor: colors.grey,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   input: {
     paddingHorizontal: 16,
     paddingVertical: 20,
+    flex: 1,
+  },
+  eye: {
+    width: 20,
+    height: 20,
+    marginHorizontal: 16,
   },
 });

@@ -10,7 +10,7 @@ export const Signup = () => {
       <AuthHeader title="Sign Up" />
       <Input label="Name" placeholder="Will Bowles" />
       <Input label="E-mail" placeholder="test@example.com" />
-      <Input label="Password" placeholder="********" />
+      <Input isPassword label="Password" placeholder="********" />
     </View>
   );
 };
