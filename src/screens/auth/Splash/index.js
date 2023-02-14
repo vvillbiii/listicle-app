@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, Image, View, Pressable} from 'react-native';
 import {Button} from '../../../components/Button';
+import {SignUp} from '../Signup';
 import {styles} from './styles';
 
 export const Splash = () => {
