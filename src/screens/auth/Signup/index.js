@@ -6,6 +6,7 @@ import {Input} from '../../../components/Input';
 import {Checkbox} from '../../../components/Checkbox';
 import {Button} from '../../../components/Button';
 import {Separator} from '../../../components/Separator';
+import {GoogleLogin} from '../../../components/GoogleLogin';
 
 export const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -25,6 +26,7 @@ export const Signup = () => {
       </View>
       <Button style={styles.button} title="Sign Up" />
       <Separator text="or sign up with" />
+      <GoogleLogin />
     </View>
   );
 };
