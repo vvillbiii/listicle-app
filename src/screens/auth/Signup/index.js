@@ -8,7 +8,7 @@ import {Button} from '../../../components/Button';
 import {Separator} from '../../../components/Separator';
 import {GoogleLogin} from '../../../components/GoogleLogin';
 
-export const Signup = () => {
+export const Signin = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const onSignIn = () => {
@@ -17,22 +17,16 @@ export const Signup = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <AuthHeader title="Sign Up" />
-      <Input label="Name" placeholder="Will Bowles" />
+      <AuthHeader title="Sign In" />
+
       <Input label="E-mail" placeholder="test@example.com" />
       <Input isPassword label="Password" placeholder="********" />
-      <View style={styles.agreeRow}>
-        <Checkbox checked={isChecked} handleCheck={setIsChecked} />
-        <Text style={styles.agreeText}>
-          I agree with the <Text style={styles.agreeTextBold}>Terms</Text> &{' '}
-          <Text style={styles.agreeTextBold}>Privacy policy</Text>
-        </Text>
-      </View>
-      <Button style={styles.button} title="Sign Up" />
-      <Separator text="or sign up with" />
+
+      <Button style={styles.button} title="Sign In" />
+      <Separator text="or sign in with" />
       <GoogleLogin />
       <Text style={styles.footerText}>
-        Already have an account?{' '}
+        Don’t have an account?{' '}
         <Text onPress={onSignIn} style={styles.footerLink}>
           Sign up
         </Text>
