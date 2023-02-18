@@ -7,9 +7,16 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Config from 'react-native-config';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {colors} from './src/utils/colors';
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
+
+  const MyTheme = {
+    colors: {
+      background: colors.white,
+    },
+  };
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -22,7 +29,7 @@ function App(): JSX.Element {
   }, []);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Signup" component={Signup} />
