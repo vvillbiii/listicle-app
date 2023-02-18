@@ -1,12 +1,16 @@
 import React, {useEffect} from 'react';
 import {SafeAreaView, View} from 'react-native';
-// import {Splash} from './src/screens/auth/Splash';
-// import {Signup} from './src/screens/auth/Signup';
-import {Signin} from './src/screens/auth/Signup';
+import {Splash} from './src/screens/auth/Splash';
+import {Signup} from './src/screens/auth/Signup';
+import {Signin} from './src/screens/auth/Signin';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Config from 'react-native-config';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 function App(): JSX.Element {
+  const Stack = createNativeStackNavigator();
+
   useEffect(() => {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
@@ -18,11 +22,13 @@ function App(): JSX.Element {
   }, []);
 
   return (
-    <SafeAreaView>
-      <View>
-        <Signin />
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Signin" component={Signin} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

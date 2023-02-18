@@ -7,7 +7,7 @@ import {Button} from '../../../components/Button';
 import {Separator} from '../../../components/Separator';
 import {GoogleLogin} from '../../../components/GoogleLogin';
 
-export const Signup = () => {
+export const Signin = () => {
   const onSignUp = () => {
     console.log('hello');
   };

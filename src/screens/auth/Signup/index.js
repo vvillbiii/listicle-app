@@ -8,7 +8,7 @@ import {Button} from '../../../components/Button';
 import {Separator} from '../../../components/Separator';
 import {GoogleLogin} from '../../../components/GoogleLogin';
 
-export const Signin = () => {
+export const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   const onSignIn = () => {
