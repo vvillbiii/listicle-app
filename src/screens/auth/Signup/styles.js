@@ -21,4 +21,12 @@ export const styles = StyleSheet.create({
   button: {
     marginVertical: 24,
   },
+  footerText: {
+    color: colors.blue,
+    marginBottom: 14,
+    textAlign: 'center',
+  },
+  footerLink: {
+    fontWeight: 'bold',
+  },
 });

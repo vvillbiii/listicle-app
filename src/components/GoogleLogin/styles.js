@@ -4,6 +4,7 @@ import {colors} from '../../utils/colors';
 export const styles = StyleSheet.create({
   container: {
     marginTop: 10,
+    marginBottom: 30,
     backgroundColor: colors.darkGrey,
     paddingVertical: 20,
     paddingHorizontal: 8,
