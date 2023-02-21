@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favorites" component={Favorites} />
       <Tab.Screen name="Profile" component={Profile} />
@@ -27,7 +27,7 @@ const Tabs = () => {
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
-  const isSignedIn = false;
+  const isSignedIn = true;
 
   const MyTheme = {
     colors: {
