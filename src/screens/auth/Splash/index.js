@@ -1,10 +1,17 @@
 import React from 'react';
 import {Text, Image, View, Pressable} from 'react-native';
 import {Button} from '../../../components/Button';
-import {SignUp} from '../Signup';
 import {styles} from './styles';
 
-export const Splash = () => {
+export const Splash = ({navigation}) => {
+  const onSignup = () => {
+    navigation.navigate('Signup');
+  };
+
+  const onSignin = () => {
+    navigation.navigate('Signin');
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -17,9 +24,9 @@ export const Splash = () => {
         <Text style={[styles.title, styles.innerTitle]}>all you need</Text>
         <Text style={styles.title}>here!</Text>
       </View>
-      <Button title="Sign in" />
-      <Pressable hitSlop={20}>
-        <Text style={styles.signUp}>Sign up</Text>
+      <Button onPress={onSignup} title="Sign Up" />
+      <Pressable onPress={onSignin} hitSlop={20}>
+        <Text style={styles.signUp}>Sign in</Text>
       </Pressable>
     </View>
   );
