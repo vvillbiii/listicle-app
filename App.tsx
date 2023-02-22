@@ -12,12 +12,38 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {colors} from './src/utils/colors';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Image} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let icon;
+
+          if (route.name === 'Home') {
+            icon = focused
+              ? require('./src/assets/tabs/clarity_home-solid-fill.png')
+              : require('./src/assets/tabs/clarity_home-solid.png');
+          } else if (route.name === 'Profile') {
+            icon = focused
+              ? require('./src/assets/tabs/bi_person-fill.png')
+              : require('./src/assets/tabs/bi_person.png');
+          } else if (route.name === 'Favorites') {
+            icon = focused
+              ? require('./src/assets/tabs/marker-fill.png')
+              : require('./src/assets/tabs/marker.png');
+          }
+
+          // You can return any component that you like here!
+          return <Image source={icon} style={{width: 24, height: 24}} />;
+        },
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {borderTopColor: colors.grey},
+      })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favorites" component={Favorites} />
       <Tab.Screen name="Profile" component={Profile} />
@@ -27,7 +53,7 @@ const Tabs = () => {
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
-  const isSignedIn = true;
+  const isSignedIn = false;
 
   const MyTheme = {
     colors: {
