@@ -15,7 +15,6 @@ export const Home = () => {
     <SafeAreaView>
       <ScrollView style={styles.container}>
         <Header showSearch title="Find all you need" />
-        <Text>Home</Text>
         <FlatList
           style={styles.list}
           horizontal
